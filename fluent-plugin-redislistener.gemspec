@@ -1,20 +1,18 @@
 # -*- encoding: utf-8 -*-
-Gem::Specification.new do |gem|
-gem.name = "fluent-plugin-redislistener"
-gem.version = "0.0.1"
-gem.authors = ["Onur Baran"]
-gem.email = ["baranonur@gmail.com"]
-gem.summary = %q{Redis List Subscriber}
-gem.description = %q{Fluentd plugin to redis list subscriber to persist your messages.}
-gem.homepage = "https://github.com/onurbaran/fluent-plugin-redislistener"
-gem.files = `git ls-files`.split($\)
-gem.executables = gem.files.grep(%r{^bin/}).map { |f| File.basename(f) }
-gem.test_files = gem.files.grep(%r{^(test|spec|features)/})
-gem.require_paths = ["lib"]
-gem.has_rdoc = false
-gem.add_development_dependency "rake"
-gem.add_development_dependency "fluentd"
-gem.add_development_dependency "redis"
-gem.add_runtime_dependency "fluentd"
-gem.add_runtime_dependency "redis"
+$:.push File.expand_path("../lib", __FILE__)
+Gem::Specification.new do |s|
+s.name = "fluent-plugin-redislistener"
+s.version = "0.0.1"
+s.platform = Gem::Platform::RUBY
+s.authors = ["Onur Baran"]
+s.date = %q{2015-03-31}
+s.email = "baranonur@gmail.com"
+s.homepage = "https://github.com/onurbaran/fluent-plugin-redislistener"
+s.summary = "fluentd plugin for redis list subscriber"
+s.files = `git ls-files`.split("\n")
+s.test_files = `git ls-files -- {test,spec,features}/*`.split("\n")
+s.executables = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
+s.require_paths = ["lib"]
+s.add_dependency %q<fluentd>, ["~> 0.10.0"]
+s.add_dependency %q<redis>, ["~> 2.2.2"]
 end
