@@ -1,5 +1,8 @@
 # fluent-plugin-redislistener
-Redis list listener plugin for Fluentd
+Redis list input plugin for Fluentd
+
+Sometimes you need persist your event/log messages while using redis->fluentd. 
+
 
 ## Installation : 
 
